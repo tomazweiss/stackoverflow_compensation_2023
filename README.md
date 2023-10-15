@@ -1,2 +1,2 @@
-# stackoverflow_compensation_2023
-exploring 2023 developer compensation by country
+# 2023 Developer Compensation by Country
+Exploring 2023 developer compensation by country. Code from my blogpost on https://tomazweiss.github.io/.
