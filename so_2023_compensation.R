@@ -51,7 +51,7 @@ country_n_resp <-
 # country - continent table
 countries <- 
   data |> 
-  distinct(country) %>% 
+  distinct(country) |>
   mutate(continent = countrycode(sourcevar = country, origin = "country.name", destination = "continent"))
 
 
@@ -61,7 +61,7 @@ countries <-
 fig <- 
   data |> 
   left_join(countries, by = "country") |> 
-  inner_join(country_n_resp %>% filter(n_resp >= 30), by = "country") |> 
+  inner_join(country_n_resp |> filter(n_resp >= 30), by = "country") |> 
   mutate(country = paste0(country, ' (', n_resp, ')')) |> 
   mutate(country = reorder(country, converted_comp_yearly, median)) |> 
   ggplot(aes(x = country, y = converted_comp_yearly, fill = continent)) + 
